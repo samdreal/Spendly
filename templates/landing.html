@@ -28,7 +28,7 @@
 
         <div class="hero-cta-row">
             <a href="{{ url_for('register') }}" class="hero-btn">Create free account</a>
-            <a href="#" class="hero-btn hero-btn-secondary">See how it works</a>
+            <button type="button" class="hero-btn hero-btn-secondary" id="see-how-btn">See how it works</button>
         </div>
 
         <div class="hero-panel">
@@ -109,4 +109,64 @@
     </div>
 </section>
 
+<!-- "See how it works" video modal -->
+<div class="video-modal" id="video-modal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-close></div>
+    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="How Spendly works">
+        <button type="button" class="video-modal-close" id="video-modal-close" aria-label="Close video" data-close>&times;</button>
+        <div class="video-modal-frame">
+            <iframe
+                id="video-modal-iframe"
+                title="How Spendly works"
+                src=""
+                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    (function () {
+        var openBtn = document.getElementById("see-how-btn");
+        var modal = document.getElementById("video-modal");
+        var iframe = document.getElementById("video-modal-iframe");
+
+        if (!openBtn || !modal || !iframe) return;
+
+        function openModal() {
+            iframe.src = iframe.getAttribute("data-src");
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+            // Clearing src stops playback so audio/video does not continue in the background.
+            iframe.src = "";
+        }
+
+        openBtn.addEventListener("click", openModal);
+
+        // Close button and clicking outside the dialog (backdrop) both close the modal.
+        modal.addEventListener("click", function (event) {
+            if (event.target.hasAttribute("data-close")) {
+                closeModal();
+            }
+        });
+
+        // Escape key closes the modal too.
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && modal.classList.contains("is-open")) {
+                closeModal();
+            }
+        });
+    })();
+</script>
 {% endblock %}
