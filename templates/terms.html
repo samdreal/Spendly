@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block title %}Terms and Conditions — Spendly{% endblock %}
+
+{% block head %}
+<style>
+    .legal-section {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem 5rem;
+    }
+
+    .legal-header {
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .legal-title {
+        font-family: var(--font-display);
+        font-size: 2.75rem;
+        line-height: 1.1;
+        color: var(--ink);
+        margin-bottom: 0.75rem;
+    }
+
+    .legal-updated {
+        font-size: 0.9rem;
+        color: var(--ink-muted);
+    }
+
+    .legal-intro {
+        font-size: 1.05rem;
+        color: var(--ink-soft);
+        margin-bottom: 2.5rem;
+    }
+
+    .legal-block { margin-bottom: 2.5rem; }
+
+    .legal-block h2 {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        color: var(--ink);
+        margin-bottom: 0.85rem;
+    }
+
+    .legal-block p { color: var(--ink-soft); margin-bottom: 1rem; }
+    .legal-block p:last-child { margin-bottom: 0; }
+
+    .legal-block ul {
+        color: var(--ink-soft);
+        margin: 0 0 1rem 1.25rem;
+    }
+
+    .legal-block li { margin-bottom: 0.5rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="legal-section">
+
+    <div class="legal-header">
+        <h1 class="legal-title">Terms and Conditions</h1>
+        <p class="legal-updated">Last updated: 8 August 2026</p>
+    </div>
+
+    <p class="legal-intro">
+        Welcome to Spendly. These Terms and Conditions ("Terms") govern your use of
+        the Spendly personal expense tracking application (the "Service"). Please read
+        them carefully. By creating an account or using the Service, you agree to be
+        bound by these Terms.
+    </p>
+
+    <div class="legal-block">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+            By accessing or using Spendly, you confirm that you have read, understood,
+            and agree to be bound by these Terms. If you do not agree with any part of
+            these Terms, you should not use the Service.
+        </p>
+        <p>
+            You must be at least 13 years old, or the minimum age required in your
+            jurisdiction, to use Spendly. By using the Service, you represent that you
+            meet this requirement.
+        </p>
+    </div>
+
+    <div class="legal-block">
+        <h2>2. Use of Service</h2>
+        <p>
+            Spendly provides tools to help you log expenses, categorise transactions,
+            and review your personal spending patterns. The Service is intended for your
+            own personal, non-commercial financial tracking.
+        </p>
+        <p>You agree that you will not:</p>
+        <ul>
+            <li>Use the Service for any unlawful, fraudulent, or unauthorised purpose.</li>
+            <li>Attempt to gain unauthorised access to other users' accounts or data.</li>
+            <li>Interfere with, disrupt, or place undue load on the Service or its infrastructure.</li>
+            <li>Copy, resell, or redistribute the Service without our written permission.</li>
+        </ul>
+        <p>
+            You are responsible for keeping your account credentials confidential and for
+            all activity that occurs under your account.
+        </p>
+    </div>
+
+    <div class="legal-block">
+        <h2>3. User Data</h2>
+        <p>
+            The expense entries, categories, and other information you add to Spendly
+            belong to you. We store this data solely to provide the Service to you and
+            to help you review your own financial activity.
+        </p>
+        <p>
+            We take reasonable steps to protect your data, but no method of storage or
+            transmission is completely secure. You are encouraged to keep your own records
+            of important financial information. You may request deletion of your account
+            and associated data at any time.
+        </p>
+    </div>
+
+    <div class="legal-block">
+        <h2>4. Limitations of Liability</h2>
+        <p>
+            Spendly is provided on an "as is" and "as available" basis, without warranties
+            of any kind, whether express or implied. We do not provide financial, tax, or
+            investment advice, and the Service should not be relied upon as a substitute for
+            professional guidance.
+        </p>
+        <p>
+            To the fullest extent permitted by law, Spendly and its creators shall not be
+            liable for any indirect, incidental, or consequential damages, or for any loss
+            of data, profits, or savings arising from your use of, or inability to use, the
+            Service.
+        </p>
+    </div>
+
+    <div class="legal-block">
+        <h2>5. Changes to Terms</h2>
+        <p>
+            We may update these Terms from time to time to reflect changes to the Service or
+            for legal and regulatory reasons. When we make material changes, we will update
+            the "Last updated" date at the top of this page.
+        </p>
+        <p>
+            Your continued use of Spendly after any changes take effect constitutes your
+            acceptance of the revised Terms. If you do not agree with the updated Terms, you
+            should stop using the Service.
+        </p>
+    </div>
+
+</section>
+
+{% endblock %}
